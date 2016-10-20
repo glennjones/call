@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>HAPIRouter Playground</title>
+    <link href="playground.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <section class="content">
+    <div class="container-fluid">
+        <h1>HAPIRouter Playground</h1>
+
+
+        <p>This form allows you to try different <a href="http://hapijs.com/">HAPI.js</a> routers
+        and paths and test if they match. It uses a browser verions of the <a href="">HAPI Call router module</a>.<p>
+
+        <form class="playground-form pure-form pure-form-aligned">
+
+            <div class="pure-control-group">
+                <label class="" for="inputRoute">Route</label>
+                <input type="text" id="inputRoute" class="pure-input-1-2" value="/path/{item}/">
+            </div>
+
+            <div class="pure-control-group">
+                <label class="control-label" for="inputPath">Path</label>
+                <input type="text" id="inputPath" class="pure-input-1-2" value="/path/my-value/">
+            </div>
+
+            <div class="pure-controls">
+                <label class="pure-checkbox">
+                    <input id="normalise" type="checkbox"> Remove trailing slashes, querystrings and hash fragements when matching.
+                </label>
+            </div>
+
+        </form>
+
+
+        <div>
+            <h2>Results</h2>
+            <div class="alert alert-error no-match display-none">
+                The path does not match the route
+            </div>
+            <div class="alert alert-success is-match display-none">
+                The path matches the route
+            </div>
+            <div id="results" class="display-none">
+                <p>
+                    And the path <strong>params</strong> have the following values:
+                </p>
+                <ul id="resultsList"></ul>
+            </ul>
+        </div>
+
+
+
+           <p class="notes">Notes: The HAPI router like Express <a href="https://github.com/pillarjs/path-to-regexp">Path-to-RegExp</a> router does not
+           parse querystrings. Trailing slashes are parsed if they differ between the route and the path no match will be found. Use the checkbox to
+           remove all the elements of a URL apart from the path when matching.<p>
+
+               <p class="notes" >Source: <a href="https://github.com/glennjones/call">https://github.com/glennjones/call</a></p>
+
+    </section>
+
+
+    <script src="../build/hapi-router.js"></script>
+    <script src="playground.js"></script>
+</body>
+
+</html>

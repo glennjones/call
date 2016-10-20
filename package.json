@@ -17,11 +17,27 @@
   },
   "devDependencies": {
     "code": "3.x.x",
-    "lab": "10.x.x"
+    "lab": "10.x.x",
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "livereload": "^0.5.0",
+    "npm-run-all": "^3.0.0",
+    "rollup": "^0.34.9",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^3.3.1",
+    "rollup-plugin-eslint": "^2.0.2",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-postcss": "^0.1.1",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-watch": "^2.5.0"
   },
   "scripts": {
     "test": "lab -a code -t 100 -L",
     "test-cov-html": "lab -a code -r html -o coverage.html"
   },
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "browser": {
+    "hoek": "./browser/hoek.js",
+    "boom": "./browser/boom.js"
+  }
 }
